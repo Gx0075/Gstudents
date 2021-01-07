@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/bg_g.css" rel="stylesheet">
+    <title>修改班级页面</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        修改班级信息
+    </div>
+</div>
+<hr/>
+<form action="/up_G.html" method="POST">
+    {% csrf_token %}
+	<table border="1" width="450px">
+        <p style="display: none">
+            <!--隐藏id项-->
+            <input typpe="text" name="gid" value="{{ gra.id }}">
+        </p>
+		<tr>
+			<th>所属系别</th>
+			<td><input type="text" name="gxibie" class="form-control"  value="{{ gra.gxibie }}"/></td>
+		</tr>
+		<tr>
+			<th>班级班号</th>
+			<td><input type="text" name="gname" class="form-control" value="{{ gra.gname }}" /></td>
+		</tr>
+		<tr>
+			<th>创建日期</th>
+			<td><input type="date" name="gdate" class="form-control" value="{{ gra.gdate }}" /></td>
+		</tr>
+		<tr>
+			<th>女生人数</th>
+			<td><input type="text" name="ggirlnum" class="form-control" value="{{ gra.ggirlnum }}" /></td>
+		</tr>
+		<tr>
+			<th>男生人数</th>
+			<td><input type="text" name="gboynum" class="form-control"  value="{{ gra.gboynum }}"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="reset" value="重置" class="btn btn-primary" id="reset" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="提交"  class="btn btn-success" id="up" />
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

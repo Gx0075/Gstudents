@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生页面</title>
+    <link href="/static/css/bg_s.css" rel="stylesheet">
+    <style type="text/css">
+      select { width: 50% ; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        新增学生信息
+    </div>
+</div>
+<hr />
+<form action="/add_S.html" method="POST">
+    {% csrf_token %}
+	<table border="1" width="400px">
+		<tr>
+			<th>学生学号</th>
+			<td><input type="text" name="snum" class="form-control"  /></td>
+		</tr>
+		<tr>
+			<th>学生姓名</th>
+			<td><input type="text" name="sname" class="form-control"  /></td>
+		</tr>
+
+		<tr>
+			<th>学生性别</th>
+			<td>
+                <input type="radio" name="ssex" class="form-control" value="男生" />-男生
+                <input type="radio" name="ssex" class="form-control" value="女生" />-女生
+            </td>
+		</tr>
+		<tr>
+			<th>学生年龄</th>
+			<td><input type="text" name="sage" class="form-control"  /></td>
+		</tr>
+		<tr>
+			<th>联系方式</th>
+			<td><input type="text" name="stab" class="form-control"  /></td>
+		</tr>
+        <tr>
+        <th>所属班级</th>
+        <td>
+             <select name="sgrade">
+                <!--循环显示班级列表id和名称-->
+                {% for row in g_list %}
+                    <option  value="{{ row.id }}">{{ row.gname }}</option>
+                {% endfor %}
+            </select>
+        </td>
+
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="reset" value="重置" class="btn btn-primary" id="reset" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="添加"  class="btn btn-success" id="add"   />
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

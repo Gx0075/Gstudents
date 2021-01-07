@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+
+<head>
+    <link href="/static/css/tab.css" rel="stylesheet">
+    <link href="/static/css/jquery.min.js" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body style="text-align: center" bgcolor="#ffdab9">
+    <h1>欢迎来到学生信息管理系统</h1>
+
+    <table class="dataintable" style="vertical-align:middle">
+
+        <tr align="center">
+            <td colspan="1"><a href="add_S.html"><button>添加</button></a></td>
+            <td colspan="2"><a href="grades.html"><button>切换</button></a></td>
+            <td colspan="1"><a href="px_S.html"><button>排序</button></a></td>
+            <td colspan="2">
+                <div>
+                <input type="text" placeholder="请输入..."  value="" id="num"/>
+                    <a href="" onclick="getnum(this)"> <button>搜索</button></a>
+                    <script type="text/javascript">
+                        function getnum(a){
+                            var num = document.getElementById("num").value;
+                            a.href='sel_S.html?snum='+num
+                        }
+                    </script>
+                </div>
+            </td>
+            <td colspan="1"><a href="/"><button>注销</button></a> </td>
+        </tr>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>联系方式</td>
+            <td>班级</td>
+            <td>操作</td>
+        </tr>
+
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.snum }}</td>
+                    <td>{{ student.sname }}</td>
+                    <td>{{ student.ssex}}</td>
+                    <td>{{ student.sage }}</td>
+                    <td>{{ student.stab }}</td>
+                    <td>{{ student.sgrade.gname }}</td>
+                    <td>
+                        <a href="up_S.html?sid={{ student.id }}"><button><span>修改</span></button></a>
+                        <a href="del_S.html?sid={{ student.id }}"><button><span>删除</span></button></a><!--get请求-->
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+
+
+</body>
+</html>

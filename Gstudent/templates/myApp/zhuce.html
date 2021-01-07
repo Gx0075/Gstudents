@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <style type="text/css">
+        html,body {
+    background:#e0ffff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+    .wrapper{text-align: center;}
+    input[type=submit]{
+ 			width: 80px;
+ 			height: 30px;
+ 			background-color: rgb(244,244,244);
+ 		}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <h1>注册界面</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <hr />
+            <table border="1px" align="center">
+                <tr height="35px">
+                    <td width="150px">用户名</td>
+                    <td width="300px">
+                        <input type="text" name="name" id="name" value="" />
+                    </td>
+                </tr>
+                <tr height="35px">
+                    <td >密码</td>
+                    <td>
+                        <input type="password" name="pwd" id="pwd" value="" />
+                    </td>
+                </tr>
+                <tr height="35px">
+                    <td >确认密码</td>
+                    <td>
+                        <input type="password" name="re_pwd" id="re_pwd" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" id="" value="注册"/>
+                    </td>
+                </tr>
+            </table>
+    </form>
+</div>
+</body>
+</html>

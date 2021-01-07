@@ -1,0 +1,72 @@
+table.dataintable {
+	margin-top:15px;
+	border-collapse:collapse;
+	border:1px solid #aaa;
+	width:100%;
+	}
+
+table.dataintable th {
+	vertical-align:baseline;
+	padding:5px 15px 5px 6px;
+	background-color:#3F3F3F;
+	border:1px solid #3F3F3F;
+	text-align:left;
+	color:#fff;
+	}
+
+table.dataintable td {
+	vertical-align:text-top;
+	padding:6px 15px 6px 6px;
+	border:1px solid #aaa;
+	}
+
+table.dataintable tr:nth-child(odd) {
+	background-color:#F5F5F5;
+}
+
+table.dataintable tr:nth-child(even) {
+	background-color:#fff;
+}
+
+table.dataintable button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 5px;
+  padding: 10px;
+  width: 75px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+table.dataintable button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+table.dataintable button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+table.dataintable button:hover span {
+  padding-right: 25px;
+}
+
+table.dataintable button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+

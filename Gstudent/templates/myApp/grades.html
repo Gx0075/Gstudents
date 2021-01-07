@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+
+<head>
+    <link href="/static/css/tab.css" rel="stylesheet">
+    <link href="/static/css/jquery.min.js" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>班级信息</title>
+</head>
+<body style="text-align: center" bgcolor="#58D3F7">
+    <h1>欢迎来到班级信息管理系统</h1>
+
+    <table class="dataintable" style="vertical-align:middle">
+
+        <tr align="center">
+            <td colspan="2"><a href="add_G.html"><button>添加</button></a></td>
+            <td colspan="1"><a href="students.html"><button>切换</button></a></td>
+            <td colspan="1"><a href="px_nv.html"><button>排序</button></a></td>
+            <td colspan="1"><a href="px_nan.html"><button>排序</button></a></td>
+            <td colspan="1">
+                <div>
+                    <form method="post" action="sel_G.html"><!--表单传参-->
+                        {% csrf_token  %}   <!-- 防止跨站攻击 -->
+                        <input type="text" placeholder="请输入..."  value="" id="xibie" name="xb"/>
+                        <button type="submit">搜索</button>
+                    </form>
+                    <!--
+                    <a href="" onclick="getxibie(this)"> <button>搜索</button></a>
+                    <script type="text/javascript">
+                        function getxibie(a){
+                            var xibie = document.getElementById("xibie").value;
+                            a.href='sel_G.html?gxibie='+xibie
+                        }
+                    </script>
+                -->
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>所属系别</td>
+            <td>班级班号</td>
+            <td>创建日期</td>
+            <td>女生人数</td>
+            <td>男生人数</td>
+            <td>操作</td>
+        </tr>
+
+            {% for grade in grades %}
+                <tr>
+                    <td>{{ grade.gxibie }}</td>
+                    <td>{{ grade.gname }}</td>
+                    <td>{{ grade.gdate }}</td>
+                    <td>{{ grade.ggirlnum }}</td>
+                    <td>{{ grade.gboynum }}</td>
+                    <td>
+                        <a href="up_G.html?gid={{ grade.id }}"><button><span>修改</span></button></a>
+                        <a href="del_G.html?gid={{ grade.id }}"><button><span>删除</span></button></a>
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+html,body {
+    background:#58D3F7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.wrapper{text-align: center;}
+.size{width:400px}
+.header{
+    font-size: 50px;
+    font-family: 微软雅黑;
+    color: rgb(98,94,91);
+}
+input[type=reset]{
+ 			width: 80px;
+ 			height: 30px;
+ 			background-color: rgb(244,244,244);
+ 		}
+input[type=submit]{
+ 			width: 80px;
+ 			height: 30px;
+ 			background-color: rgb(244,244,244);
+ 		}
+table
+        {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+        table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 50px;
+        }
+        table thead th
+        {
+            background-color: #CCE8EB;
+            width: 200px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #F2F2F2;
+        }
+        table tr:nth-child(even)
+        {
+            background: #fff;
+        }

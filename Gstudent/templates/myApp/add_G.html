@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/bg_g.css" rel="stylesheet">
+    <title>添加班级页面</title>
+    <style type="text/css">
+      select { width: 50% ; }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        新增班级信息
+    </div>
+</div>
+    <hr />
+<form action="/add_G.html" method="POST">
+    {% csrf_token %}
+	<table class="size" border="1" width="400px" align="center">
+		<tr>
+			<th>所属系别</th>
+			<td><input type="text" name="gxibie" class="form-control"  /></td>
+		</tr>
+		<tr>
+			<th>班级班号</th>
+			<td><input type="text" name="gname" class="form-control"  /></td>
+		</tr>
+
+		<tr>
+			<th>创建日期</th>
+			<td><input type="date" name="gdate" class="form-control"  /></td>
+		</tr>
+		<tr>
+			<th>女生人数</th>
+			<td><input type="text" name="ggirlnum" class="form-control"  /></td>
+		</tr>
+		<tr>
+			<th>男生人数</th>
+			<td><input type="text" name="gboynum" class="form-control"  /></td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<input type="reset" value="重置" class="btn btn-primary" id="reset" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="添加"  class="btn btn-success" id="add"   />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
